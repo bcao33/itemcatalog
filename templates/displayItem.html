@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <link rel=stylesheet type=text/css href="{{url_for('static', filename='styles.css')}}">
+    </head>
+
+    <body>
+        <h1>*** {{ category.name }} ***</h1>
+
+            <a href='{{url_for('createItem', categories_id = category.id)}}'> Create New {{ category.name }} Item </a>
+    <div>
+        <h2>Current Items for {{category.name}}:</h2>
+                {% for i in items %}
+                <a href='{{url_for('showItemDescription',
+                categories_id = category.id, item_id = i.id)}}'> {{i.name}} </a>
+                </br>
+                {% endfor %}
+    </div>
+</br>
+            <a class="box" href='{{url_for('showCategories', categories_id =
+            category.id)}}'> Back to all Categories </a>
+</br></br></br>
+
+            <a class="box" href='{{url_for('login')}}'> Click to login </a>
+</br></br></br>
+            <a class="box" href='{{url_for('CategoryItemsJSON',
+                categories_id = category.id, item_id = items.id)}}'> Click to see JSON endpoint for {{ category.name }}</a>
+
+</br></br></br>
+
+
+    </body>
+</html>

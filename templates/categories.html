@@ -1,0 +1,34 @@
+
+<html>
+<head>
+  <link rel=stylesheet type=text/css href="{{url_for('static', filename='styles.css')}}">
+  </head>
+  <body>
+      <h1> Catalog App </h1>
+
+      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+
+      <ul>
+          {% for message in messages %}
+              <li> <strong> {{ message }} </strong></li>
+          {% endfor %}
+      </ul>
+      {% endif %}
+      {% endwith %}
+
+          <h3>Categories (select one to see the items)</h3>
+              <p>{% for i in category %}
+              <a href='{{url_for('showCategoryItem', categories_id = i.id)}}'> {{i.name}} </a>
+              </br>
+              {% endfor %}
+          </p>
+      </br></br></br>
+
+      <a class="box" href='{{url_for('login')}}'> Click to login </a>
+
+      <a class="box" href='{{url_for('gdisconnect')}}'> Click to logout </a>
+  </br></br></br>
+  <a class="box" href='{{url_for('CategoryJSON')}}'> Click to see JSON endpoint for all categories</a>
+      </body>
+</html>
