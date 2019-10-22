@@ -19,5 +19,5 @@ Follow the steps below to get started:
 4. Once the VM is finished installing, you can use `vagrant ssh` to get into the VM.
 5. In the terminal, run `python3 database_setup.py` to create the database.
 6. In the terminal, run `python3 populate_database.py` to populate the database with data.
-7. In the terminal, run `python3 application.py` to start the application on port 8000.
+7. In the terminal, run `python3 application.py` to start the application on port 5000.
 8. From any browser, go to `http://localhost:5000` to access the application. 
